@@ -98,6 +98,6 @@ public class Fruits_Combinations : MonoBehaviour
     void addPoints(int p)
     {
         pontos += p;
-        PUI.text = "Pontos: " + pontos;
+        PUI.text = "Pontuação: " + pontos;
     }
 }
