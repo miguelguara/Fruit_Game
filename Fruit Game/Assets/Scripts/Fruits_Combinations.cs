@@ -13,6 +13,14 @@ public class Fruits_Combinations : MonoBehaviour
     [SerializeField]
     private Text PUI;
     private int pontos;
+    private Audio_M AM;
+    [SerializeField]
+    private AudioClip POP_Clip;
+
+    private void Start()
+    {
+        AM = FindObjectOfType<Audio_M>();
+    }
 
     public void C_fruta(string tag,Transform PosI)
     {
@@ -85,6 +93,7 @@ public class Fruits_Combinations : MonoBehaviour
             addPoints(12);
             aba_c = 0;
         }
+        AM.PlayAudio(POP_Clip);
     }
     void addPoints(int p)
     {

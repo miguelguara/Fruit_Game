@@ -15,7 +15,7 @@ public class Game_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&& selected_fruit != null)
         {
             ADDG();
             StartCoroutine(CF());
@@ -24,7 +24,7 @@ public class Game_Manager : MonoBehaviour
 
     IEnumerator CF()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         int cx = Random.Range(0, 3);
         selected_fruit = Instantiate(fruits_to_Spawn[cx], SP.transform.position, Quaternion.identity);
         rb = selected_fruit.GetComponent<Rigidbody2D>();
@@ -32,5 +32,6 @@ public class Game_Manager : MonoBehaviour
     void ADDG()
     {
         rb.gravityScale = 1f;
+        selected_fruit = null;
     }
 }
